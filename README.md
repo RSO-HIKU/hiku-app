@@ -22,7 +22,7 @@ A web and mobile app for hikers to find mountain trails, track progress and peak
 - Communicating with external APIs to fetch weather data  
 - Generating alerts based on weather conditions  
 
-### 5. Stats and Achievements Service
+### 5. Activity Service
 - Calculating and recording hiking statistics  
 - Maintaining the digital hiking logbook  
 - Tracking user achievements  
