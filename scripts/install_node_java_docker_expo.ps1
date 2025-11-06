@@ -20,8 +20,9 @@ winget upgrade OpenJS.NodeJS.LTS --version 24.11.0 --accept-package-agreements -
 Write-Host "`nInstalling Java JDK 21..." -ForegroundColor Cyan
 winget install EclipseAdoptium.Temurin.21.JDK --accept-package-agreements --accept-source-agreements
 
-#Write-Host "`nInstalling Maven..." -ForegroundColor Cyan
-#winget install Apache.Maven --accept-package-agreements --accept-source-agreements
+# MAVEN ROČNO PRENEŠ ZIP apache-maven-3.9.11-bin.zip iz https://maven.apache.org/download.cgi
+# EKSTRAHIRAŠ V C:\Program Files 
+# NE POZABI DODATI V PATH in USTVARITI NOVE MAVEN_HOME systems variable
 
 # =========================
 # 3️⃣ Docker Desktop
