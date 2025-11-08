@@ -9,15 +9,15 @@
     <packaging>pom</packaging>
 
     <modules>
-        <!-- <module>activity-service</module>
-        <module>authentication-service</module>
-        <module>badge-service</module>
-        <module>notification-service</module> -->
+        <module>backend/services/activity-service</module>
+        <module>backend/services/authentication-service</module>
+        <module>backend/services/badge-service</module>
+        <module>backend/services/notification-service</module>
         <module>backend/services/peaks-hikes-service</module>
-        <!-- <module>scoreboards-challenges-service</module>
-        <module>social-feed-service</module>
-        <module>user-service</module>
-        <module>weather-service</module> -->
+        <module>backend/services/scoreboards-challenges-service</module>
+        <module>backend/services/social-feed-service</module>
+        <module>backend/services/user-service</module>
+        <module>backend/services/weather-service</module>
     </modules>
 
     <properties>
