@@ -69,9 +69,6 @@ npm -v
 Write-Host "Java:" -NoNewline
 java -version
 
-Write-Host "Maven:" -NoNewline
-mvn -v
-
 Write-Host "Docker:" -NoNewline
 docker --version
 

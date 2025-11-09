@@ -11,3 +11,6 @@ target/
 Thumbs.db
 
 .env
+
+# Filip's gitignore 
+local dev folder/
