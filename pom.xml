@@ -22,8 +22,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>21</maven.compiler.source>
-        <!-- property name aligned to child POM usage -->
+        <maven.compiler.release>17</maven.compiler.release>
         <kumuluzee.version>4.1.0</kumuluzee.version>
     </properties>
 
