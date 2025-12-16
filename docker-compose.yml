@@ -111,23 +111,42 @@ services:
   #   networks:
   #     - hiku-network
 
-  # Peaks & Hikes Service - MISSING DOCKERFILE
-  #peaks-hikes-service:
-   #  build:
- #      context: ./backend/services/peaks-hikes-service
-#     dockerfile: Dockerfile
-#    container_name: hiku-peaks-hikes-service
-#    ports:
-#      - "8085:8080"
-#    environment:
-#      KUMULUZEE_DATASOURCES_DEFAULT_CONNECTION_URL: "jdbc:postgresql://postgres:5432/hikudb"
-#      KUMULUZEE_DATASOURCES_DEFAULT_USER: "hikuuser"
-#      KUMULUZEE_DATASOURCES_DEFAULT_PASSWORD: "hikupassword"
-#    depends_on:
-#      postgres:
-#        condition: service_healthy
-#    networks:
-#      - hiku-network
+# Peaks & Hikes Service
+  peaks-hikes-service:
+    build:
+      context: ./backend/services/peaks-hikes-service
+      dockerfile: Dockerfile
+    container_name: hiku-peaks-hikes-service
+    ports:
+      - "8082:8082"   
+    environment:
+      KUMULUZEE_DATASOURCES_DEFAULT_CONNECTION_URL: "jdbc:postgresql://postgres:5432/hikudb"
+      KUMULUZEE_DATASOURCES_DEFAULT_USER: "hikuuser"
+      KUMULUZEE_DATASOURCES_DEFAULT_PASSWORD: "hikupassword"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - hiku-network
+
+  # Trail Import Service
+  trail-import-service:
+    build:
+      context: ./backend/services/trail-import-service
+      dockerfile: Dockerfile
+    container_name: hiku-trail-import-service
+    ports:
+      - "8084:8084"
+    environment:
+      KUMULUZEE_DATASOURCES_DEFAULT_CONNECTION_URL: "jdbc:postgresql://postgres:5432/hikudb"
+      KUMULUZEE_DATASOURCES_DEFAULT_USER: "hikuuser"
+      KUMULUZEE_DATASOURCES_DEFAULT_PASSWORD: "hikupassword"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - hiku-network
+
 
   # Scoreboards & Challenges Service - MISSING DOCKERFILE
   # scoreboards-challenges-service:
@@ -165,7 +184,7 @@ services:
   #   networks:
   #     - hiku-network
 
-  # User Service - HAS DOCKERFILE
+  # User Service 
   user-service:
     build:
       context: ./backend/services/user-service
@@ -183,23 +202,23 @@ services:
     networks:
       - hiku-network
 
-  # Weather Service - MISSING DOCKERFILE
-  # weather-service:
-  #   build:
-  #     context: ./backend/services/weather-service
-  #     dockerfile: Dockerfile
-  #   container_name: hiku-weather-service
-  #   ports:
-  #     - "8089:8080"
-  #   environment:
-  #     KUMULUZEE_DATASOURCES_DEFAULT_CONNECTION_URL: "jdbc:postgresql://postgres:5432/hikudb"
-  #     KUMULUZEE_DATASOURCES_DEFAULT_USER: "hikuuser"
-  #     KUMULUZEE_DATASOURCES_DEFAULT_PASSWORD: "hikupassword"
-  #   depends_on:
-  #     postgres:
-  #       condition: service_healthy
-  #   networks:
-  #     - hiku-network
+  # Weather Service 
+  weather-service:
+    build:
+      context: ./backend/services/weather-service
+      dockerfile: Dockerfile
+    container_name: hiku-weather-service
+    ports:
+      - "8086:8086"
+    environment:
+      KUMULUZEE_DATASOURCES_DEFAULT_CONNECTION_URL: "jdbc:postgresql://postgres:5432/hikudb"
+      KUMULUZEE_DATASOURCES_DEFAULT_USER: "hikuuser"
+      KUMULUZEE_DATASOURCES_DEFAULT_PASSWORD: "hikupassword"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - hiku-network
 
 volumes:
   postgres_data:

@@ -170,7 +170,7 @@ export default function Index() {
       </View>
       {/* Decorative background image placed under the UI (blurred and low opacity).
           It is positioned absolutely and set to ignore pointer events so it doesn't
-          intercept touches. Place Triglav.jpg in hiku-mobile/assets/images/Triglav.jpg */}
+          intercept touches. Place Triglav.jpg in frontend/assets/images/Triglav.jpg */}
       <View style={styles.heroWrapper} pointerEvents="none">
         <Image
           source={require("../assets/images/Triglav.jpg")}
