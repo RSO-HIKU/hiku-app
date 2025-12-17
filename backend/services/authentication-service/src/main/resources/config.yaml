@@ -6,3 +6,8 @@ kumuluzee:
   server:
     http:
       port: 8081
+  datasources:
+    default:
+      connectionUrl: jdbc:postgresql://postgres.database.svc.cluster.local:5432/hikudb
+      username: hikuuser
+      password: hikupassword
