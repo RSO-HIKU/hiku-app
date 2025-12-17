@@ -137,10 +137,12 @@ services:
     container_name: hiku-trail-import-service
     ports:
       - "8084:8084"
+      - "5005:5005"  # Debug port
     environment:
       KUMULUZEE_DATASOURCES_DEFAULT_CONNECTION_URL: "jdbc:postgresql://postgres:5432/hikudb"
       KUMULUZEE_DATASOURCES_DEFAULT_USER: "hikuuser"
       KUMULUZEE_DATASOURCES_DEFAULT_PASSWORD: "hikupassword"
+      JAVA_TOOL_OPTIONS: "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005"
     depends_on:
       postgres:
         condition: service_healthy
@@ -210,7 +212,9 @@ services:
     container_name: hiku-weather-service
     ports:
       - "8086:8086"
+      - "5006:5006"
     environment:
+      JAVA_TOOL_OPTIONS: "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5006"
       KUMULUZEE_DATASOURCES_DEFAULT_CONNECTION_URL: "jdbc:postgresql://postgres:5432/hikudb"
       KUMULUZEE_DATASOURCES_DEFAULT_USER: "hikuuser"
       KUMULUZEE_DATASOURCES_DEFAULT_PASSWORD: "hikupassword"
